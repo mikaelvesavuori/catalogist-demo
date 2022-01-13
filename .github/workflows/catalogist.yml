@@ -23,6 +23,6 @@ jobs:
         run: |
           echo "Running stuff..."
 
-      - name: Run stuff
+      - name: Update manifest in Catalogist
         run: |
           curl -X POST ${{ secrets.ENDPOINT }} -d "@manifest.json" -H "Authorization: ${{ secrets.API_KEY }}"
