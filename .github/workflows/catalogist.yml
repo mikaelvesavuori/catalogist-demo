@@ -1,0 +1,28 @@
+name: catalogist
+
+on:
+  push:
+    branches:
+      - 'main'
+
+permissions:
+  actions: read
+
+jobs:
+  build-unix:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: ['ubuntu-latest']
+        node-version: [14.x]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Run stuff
+        run: |
+          echo "Running stuff..."
+
+      - name: Run stuff
+        run: |
+          curl -X POST ${{ secrets.ENDPOINT }} -d "@manifest.json" -H "Authorization: ${{ secrets.API_KEY }}"
