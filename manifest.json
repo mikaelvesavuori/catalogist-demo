@@ -1,6 +1,6 @@
 {
   "spec": {
-    "serviceName": "mikael-demo-service",
+    "serviceName": "some-demo-service",
     "serviceType": "service",
     "lifecycleStage": "production",
     "version": "1.0.0",
